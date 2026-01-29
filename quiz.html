@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frugal SE Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <div class="app-container">
+        <div id="landing-page" class="view-panel">
+            <h1>Frugal Testing Quiz Portal</h1>
+            <div class="config-section">
+                <label>Select Category:</label>
+                <select id="category-select">
+                    <option value="software">Software Engineering</option>
+                    <option value="testing">Quality Assurance</option>
+                </select>
+                
+                <label>Select Difficulty:</label>
+                <select id="difficulty-select">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="start-btn" onclick="initiateQuiz()">Start Quiz</button>
+        </div>
+
+        <div id="quiz-page" class="view-panel hidden">
+            <div class="stats-bar">
+                <div id="timer-box">Time Remaining: <span id="timer-count">15</span>s</div>
+                <div id="progress-text">Question 1/5</div>
+            </div>
+            <div id="question-area">
+                <h2 id="q-text">Loading question...</h2>
+                <div id="options-grid"></div>
+            </div>
+        </div>
+
+        <div id="result-page" class="view-panel hidden">
+            <h1>Detailed Performance Analysis</h1>
+            <div id="score-text"></div>
+            <div class="analytics-container">
+                <div class="chart-item">
+                    <h3>Accuracy Overview</h3>
+                    <canvas id="accuracyChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <h3>Time Efficiency per Question</h3>
+                    <canvas id="timeChart"></canvas>
+                </div>
+            </div>
+            <button onclick="location.reload()">Take Another Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
